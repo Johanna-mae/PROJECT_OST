@@ -1,0 +1,19 @@
+.about-text{
+    color: #6B4E37;
+    line-height: 1.8;
+}
+
+.skill-card{
+    background-color: #FDF8F0;
+    padding: 24px;
+    border-left: 4px solid #8B7355;
+    border-radius: 10px;
+    color: #6B4E37;
+
+    transition: 0.3s;
+}
+
+.skill-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(139,115,85,0.15);
+}
