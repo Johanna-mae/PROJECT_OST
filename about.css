@@ -3,17 +3,112 @@
     line-height: 1.8;
 }
 
-.skill-card{
-    background-color: #FDF8F0;
-    padding: 24px;
-    border-left: 4px solid #8B7355;
-    border-radius: 10px;
-    color: #6B4E37;
+/*HOBBY And EXPERIENCES CONTAINER*/
+.container{
+    margin-top: 50px;
+    display: grid;
+    gap: 20px;
+}
 
+.info-card{
+    background-color: #FDF8F0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #D4C5B0;
     transition: 0.3s;
 }
 
-.skill-card:hover{
-    transform: translateY(-5px);
+.info-card:hover{
     box-shadow: 0 10px 25px rgba(139,115,85,0.15);
+    transform: translateY(-3px);
+}
+
+.card-header{
+    padding: 20px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #EFE4D6;
+}
+
+.card-header h3{
+    margin: 0;
+    color: #5C3D2E;
+    font-size: 22px;
+}
+
+.card-header span{
+    font-size: 24px;
+    color: #8B7355;
+}
+
+.card-content{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background-color: #FDF8F0;
+}
+
+.card-content ul{
+    padding: 20px 30px;
+    margin: 0;
+    color: #6B4E37;
+    line-height: 2;
+}
+
+/*SKILL CONTAINER*/
+.skills-container{
+    display: grid;
+    gap: 20px;
+}
+
+.skill-dropdown{
+    background-color: #FDF8F0;
+    border-radius: 12px;
+    overflow: hidden;
+    border-left: 4px solid #8B7355;
+    transition: 0.3s;
+}
+
+.skill-dropdown:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(139,115,85,0.15);
+}
+
+.skill-header{
+    padding: 20px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #EFE4D6;
+}
+
+.skill-header h4{
+    margin: 0;
+    color: #5C3D2E;
+    font-size: 20px;
+}
+
+.skill-header span{
+    font-size: 24px;
+    color: #8B7355;
+}
+
+.skill-content{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.skill-content ul{
+    padding: 20px 30px;
+    margin: 0;
+    color: #6B4E37;
+    line-height: 2;
 }
