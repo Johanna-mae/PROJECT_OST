@@ -1,0 +1,32 @@
+.project-card{
+    background-color: #FDF8F0;
+    padding: 24px;
+    border-radius: 15px;
+    border: 1px solid #D4C5B0;
+    transition: 0.3s;
+}
+
+.project-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(139,115,85,0.2);
+}
+
+.project-description{
+    color: #7A5C45;
+}
+
+.project-btn{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #8B7355;
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.project-btn:hover{
+    background-color: #6B4E37;
+}
