@@ -177,3 +177,124 @@ body{
     color: #7A5C45;
     font-size: 14px;
 }
+
+.nav-link{
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-link::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+
+    width: 0%;
+    height: 2px;
+
+    background-color: #8B7355;
+    transition: 0.4s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after{
+    width: 100%;
+}
+
+
+.reveal{
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1s ease;
+}
+
+.reveal.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-left{
+    transform: translateX(-80px);
+}
+
+.slide-right{
+    transform: translateX(80px);
+}
+
+.fade-bottom{
+    transform: translateY(80px);
+}
+
+.zoom-in{
+    transform: scale(0.8);
+}
+
+/* WHEN ACTIVE */
+
+.reveal.active.slide-left,
+.reveal.active.slide-right,
+.reveal.active.fade-bottom{
+    transform: translateX(0) translateY(0);
+}
+
+.reveal.active.zoom-in{
+    transform: scale(1);
+}
+
+/* PROFILE IMAGE TWIRL */
+
+@keyframes twirl{
+
+    0%{
+        transform: rotate(0deg) scale(1);
+    }
+
+    25%{
+        transform: rotate(4deg) scale(1.02);
+    }
+
+    50%{
+        transform: rotate(0deg) scale(1);
+    }
+
+    75%{
+        transform: rotate(-4deg) scale(1.02);
+    }
+
+    100%{
+        transform: rotate(0deg) scale(1);
+    }
+
+}
+
+.profile-frame{
+    animation: twirl 5s infinite ease-in-out;
+}
+
+/* HERO TEXT ANIMATION */
+
+@keyframes floatText{
+
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-8px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+
+}
+
+h1{
+    animation: floatText 4s ease-in-out infinite;
+}
+
+/* SMOOTH SECTION TRANSITION */
+
+section{
+    transition: 0.5s;
+}

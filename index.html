@@ -31,10 +31,10 @@
             </a>
 
             <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About Me</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About Me</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
 
         </div>
@@ -46,7 +46,7 @@
 
         <div class="grid md:grid-cols-2 gap-12 items-center">
 
-            <div class="animate-fade-up">
+            <div class="reveal slide-left">
 
                 <p class="intro-text">
                     2nd Year | Aspiring to learn new things
@@ -77,7 +77,7 @@
 
             </div>
 
-            <div class="flex justify-center animate-fade-up">
+            <div class="flex justify-center reveal slide-left">
 
                 <div class="profile-frame">
 
@@ -94,13 +94,13 @@
     <!-- ABOUT SECTION -->
     <section id="about" class="max-w-5xl mx-auto px-6 py-20">
 
-        <h2 class="font-heading text-4xl font-bold mb-12 text-center">
+        <h2 class="font-heading text-4xl font-bold mb-12 text-center reveal zoom-in">
             About Me
         </h2>
 
         <div class="max-w-3xl mx-auto mb-12">
 
-            <p class="about-text text-center mb-4">
+            <p class="about-text text-center mb-4 reveal fade-bottom">
                 I'm a 2nd Year BSIT student from Cavite State University - Imus Campus. A beginner in developing 
                 systems, but willing to learn. Through various subjects in my course, I was able to learn programming 
                 languages, code & logic, and used different platforms/tools. Coding is not my thing, but I was glad somehow
@@ -108,7 +108,7 @@
                 and study my chosen course.
             </p>
 
-            <p class="about-text text-center">
+            <p class="about-text text-center reveal fade-bottom">
                 I would like to work in an environment, where respect and team collaboration works. I am skilled in writng paper 
                 works rather than code. I can work under pressure, flexible and  a fast learner.
             </p>
@@ -116,7 +116,7 @@
             <div class="container">
 
                 <!-- HOBBIES -->
-                <div class="info-card">
+                <div class="info-card reveal fade-bottom">
 
                     <div class="card-header" onclick="toggleCard('hobbies-content')">
 
@@ -140,7 +140,7 @@
                 </div>
 
                 <!-- EXPERIENCES -->
-                <div class="info-card">
+                <div class="info-card reveal fade-bottom">
 
                     <div class="card-header" onclick="toggleCard('experience-content')">
 
@@ -174,7 +174,7 @@
         <div class="skills-container max-w-3xl mx-auto">
 
             <!-- FRONTEND -->
-            <div class="skill-dropdown">
+            <div class="skill-dropdown reveal slide-left">
 
                 <div class="skill-header" onclick="toggleCard('frontend-skills')">
 
@@ -196,7 +196,7 @@
             </div>
 
             <!-- BACKEND -->
-            <div class="skill-dropdown">
+            <div class="skill-dropdown reveal slide-left">
 
                 <div class="skill-header" onclick="toggleCard('backend-skills')">
 
@@ -217,7 +217,7 @@
             </div>
 
             <!-- TOOLS -->
-            <div class="skill-dropdown">
+            <div class="skill-dropdown reveal slide-left">
 
                 <div class="skill-header" onclick="toggleCard('tools-skills')">
 
@@ -240,7 +240,7 @@
             </div>
 
             <!-- SOFT SKILLS -->
-            <div class="skill-dropdown">
+            <div class="skill-dropdown reveal slide-left">
 
                 <div class="skill-header" onclick="toggleCard('soft-skills')">
 
@@ -280,7 +280,7 @@
         <div class="projects-container">
 
             <!-- PROJECT 1 -->
-            <div class="project-card">
+            <div class="project-card reveal zoom-in">
 
                 <img src="images/Voting_System.jpg" alt="Project Screenshot" class="project-image">
 
@@ -308,7 +308,7 @@
             </div>
 
             <!-- PROJECT 2 -->
-            <div class="project-card">
+            <div class="project-card reveal zoom-in">
 
                 <img src="images/Loan_Management_System.jpg" alt="Project Screenshot" class="project-image">
 
@@ -337,7 +337,7 @@
             </div>
 
             <!-- PROJECT 3 -->
-            <div class="project-card">
+            <div class="project-card reveal zoom-in">
 
                 <img src="images/MVC_Student_Management.png" alt="Project Screenshot" class="project-image">
 
@@ -366,7 +366,7 @@
             </div>
 
             <!-- PROJECT 4 -->
-            <div class="project-card">
+            <div class="project-card reveal zoom-in">
 
                 <img src="images/Tic_Tac_Toe.jpg" alt="Project Screenshot" class="project-image">
 
@@ -395,7 +395,7 @@
             </div>
 
             <!-- PROJECT 5 -->
-            <div class="project-card">
+            <div class="project-card reveal zoom-in">
 
                 <img src="images/Film_Script.jpg" alt="Project Screenshot" class="project-image">
 
@@ -424,7 +424,7 @@
             </div>
 
             <!-- PROJECT 6 -->
-            <div class="project-card">
+            <div class="project-card reveal zoom-in">
 
                 <img src="images/Simple_PHP_Code.jpg" alt="Project Screenshot" class="project-image">
 
@@ -474,6 +474,66 @@
             }
 
         }
+
+        /* SCROLL REVEAL ANIMATION */
+
+        function revealSections(){
+
+            const reveals = document.querySelectorAll(".reveal");
+
+            for(let i = 0; i < reveals.length; i++){
+
+                const windowHeight = window.innerHeight;
+                const revealTop = reveals[i].getBoundingClientRect().top;
+
+                const revealPoint = 120;
+
+                if(revealTop < windowHeight - revealPoint){
+                    reveals[i].classList.add("active");
+                }
+                else{
+                    reveals[i].classList.remove("active");
+                }
+
+            }
+
+        }
+
+        window.addEventListener("scroll", revealSections);
+
+        revealSections();
+
+        /* ACTIVE NAVIGATION */
+
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        window.addEventListener("scroll", () => {
+
+            let current = "";
+
+            sections.forEach(section => {
+
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if(pageYOffset >= sectionTop - 200){
+                    current = section.getAttribute("id");
+                }
+
+            });
+
+            navLinks.forEach(link => {
+
+                link.classList.remove("active");
+
+                if(link.getAttribute("href").includes(current)){
+                    link.classList.add("active");
+                }
+
+            });
+
+        });
 
     </script>
 
