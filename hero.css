@@ -148,27 +148,11 @@ body{
     object-fit: cover;
 }
 
-/* ANIMATION */
 
-@keyframes fadeUp{
-
-    from{
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
 
 .animate-fade-up{
     animation: fadeUp 0.8s ease forwards;
 }
-
-/* FOOTER */
 
 .footer{
     background-color: #E8DFD2;
@@ -229,7 +213,6 @@ body{
     transform: scale(0.8);
 }
 
-/* WHEN ACTIVE */
 
 .reveal.active.slide-left,
 .reveal.active.slide-right,
@@ -240,8 +223,6 @@ body{
 .reveal.active.zoom-in{
     transform: scale(1);
 }
-
-/* PROFILE IMAGE TWIRL */
 
 @keyframes twirl{
 
@@ -271,8 +252,6 @@ body{
     animation: twirl 5s infinite ease-in-out;
 }
 
-/* HERO TEXT ANIMATION */
-
 @keyframes floatText{
 
     0%{
@@ -293,8 +272,63 @@ h1{
     animation: floatText 4s ease-in-out infinite;
 }
 
-/* SMOOTH SECTION TRANSITION */
-
 section{
     transition: 0.5s;
+}
+
+.profile-frame{
+    position: relative;
+    cursor: pointer;
+}
+
+.resume-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    background: rgba(0,0,0,0.45);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.profile-frame:hover .resume-overlay{
+    opacity: 1;
+}
+
+.resume-btn{
+    background-color: #F5F0E8;
+    color: #5C3D2E;
+
+    text-decoration: none;
+
+    padding: 14px 28px;
+    border-radius: 40px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    transition: 0.3s ease;
+
+    transform: translateY(20px);
+}
+
+.profile-frame:hover .resume-btn{
+    transform: translateY(0);
+}
+
+.resume-btn:hover{
+    background-color: #6B4E37;
+    color: white;
+
+    transform: scale(1.05);
 }
