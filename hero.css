@@ -332,3 +332,115 @@ section{
 
     transform: scale(1.05);
 }
+
+/* INTRO TEXT ANIMATION */
+
+.intro-text{
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8B7355;
+    margin-bottom: 15px;
+    font-size: 14px;
+
+    animation: softGlow 3s ease-in-out infinite;
+}
+
+@keyframes softGlow{
+
+    0%{
+        opacity: 0.6;
+        text-shadow: 0 0 0px rgba(139,115,85,0);
+    }
+
+    50%{
+        opacity: 1;
+        text-shadow: 0 0 12px rgba(139,115,85,0.5);
+    }
+
+    100%{
+        opacity: 0.6;
+        text-shadow: 0 0 0px rgba(139,115,85,0);
+    }
+
+}
+
+
+/* HERO SUBTITLE ANIMATION */
+
+.hero-subtitle{
+    color: #7A5C45;
+    position: relative;
+
+    animation: subtitleFloat 5s ease-in-out infinite;
+}
+
+@keyframes subtitleFloat{
+
+    0%{
+        transform: translateY(0px);
+        opacity: 0.8;
+    }
+
+    25%{
+        transform: translateY(-4px);
+        opacity: 1;
+    }
+
+    50%{
+        transform: translateY(0px);
+        opacity: 0.9;
+    }
+
+    75%{
+        transform: translateY(4px);
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateY(0px);
+        opacity: 0.8;
+    }
+
+}
+
+.hero-subtitle{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hero-subtitle span{
+    animation: fadeSlide 6s infinite;
+}
+
+.hero-subtitle span:nth-child(2){
+    animation-delay: 0.5s;
+}
+
+.hero-subtitle span:nth-child(3){
+    animation-delay: 1s;
+}
+
+@keyframes fadeSlide{
+
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    20%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    80%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100%{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+}
